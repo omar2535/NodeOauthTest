@@ -13,7 +13,7 @@
                 padding: 20px 10px;
             }
             nav ul{
-                max-width: 960px;
+                max-width:100%;
                 margin: 0 auto;
                 padding: 0;
             }
@@ -43,20 +43,24 @@
                 padding: 10px;
                 background: #ff5353;
             }
+
         </style>
     </head>
     <body>
-        <nav>
-            <ul>
-                <% if (user) { %>
-                <li><a href="/auth/logout">Logout</a></li>
-                <%} else {%>
-                <li><a href="/auth/login">Login</a></li>
-                <% } %>
-                <li><a href="/profile">Profile</a></a></li>
-                <li><a href="/">Homepage</a></li>
-            </ul>
-        </nav>
+            <nav>
+                    <% if (user) { %>
+                    <img align = "right" id = "profilePict" src = "<%= user.thumbnail %>"/>
+                    <% } %>
+                    <ul id = "buttons" > 
+                        <% if (user) { %>
+                        <li><a href="/auth/logout">Logout</a></li>
+                        <%} else {%>
+                        <li><a href="/auth/login">Login</a></li>
+                        <% } %>
+                        <li><a href="/profile">Profile</a></a></li>
+                        <li><a href="/">Homepage</a></li>
+                    </ul>
+                </nav>
         <header>
             <h1>Login using...</h1>
         </header>
